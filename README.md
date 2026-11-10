@@ -69,6 +69,13 @@ change to use them.
 Tested on CachyOS with Linux 7.3, BlueZ 5.87, KDE Plasma 6, Python 3.14 and
 PySide6 6.12, a UGREEN BT 6.0 USB adapter, and Joy-Cons on firmware 2.1.4.
 
+**Got it working on your distribution?** Please file a
+[compatibility report](https://github.com/jacc/joy2con/issues/new?template=compatibility.yml)
+with your distribution, Bluetooth adapter and the programs you used, plus
+anything that didn't work. Reports are collected under the
+[compatibility label](https://github.com/jacc/joy2con/issues?q=label%3Acompatibility)
+and fill in the tables above.
+
 ## Install
 
 ### Arch Linux and derivatives

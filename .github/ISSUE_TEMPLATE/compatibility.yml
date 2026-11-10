@@ -1,0 +1,78 @@
+name: Compatibility report
+description: joy2con works, or partly works, on your system
+title: "Compatibility: <distribution>, <Bluetooth adapter>"
+labels: [compatibility]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! These reports decide what goes in the README's compatibility tables, so partial successes help too.
+  - type: input
+    id: distro
+    attributes:
+      label: Distribution and version
+      placeholder: e.g. Fedora 43, Ubuntu 26.04, SteamOS 3.8
+    validations:
+      required: true
+  - type: input
+    id: desktop
+    attributes:
+      label: Desktop
+      placeholder: e.g. KDE Plasma 6.5, GNOME 49, Steam Deck Game Mode
+  - type: input
+    id: versions
+    attributes:
+      label: Kernel and BlueZ versions
+      description: Output of `uname -r` and `bluetoothctl --version`
+    validations:
+      required: true
+  - type: input
+    id: adapter
+    attributes:
+      label: Bluetooth adapter
+      description: Its line from `lsusb`, or the model of the built-in card
+    validations:
+      required: true
+  - type: input
+    id: joycons
+    attributes:
+      label: Joy-Cons and firmware
+      description: Which Joy-Cons, and the firmware shown on each Joy-Con's page in the app
+  - type: dropdown
+    id: install
+    attributes:
+      label: How you installed joy2con
+      options:
+        - Arch package (makepkg)
+        - install.sh
+        - Running from the source checkout
+        - Other (say below)
+  - type: checkboxes
+    id: works
+    attributes:
+      label: What works
+      options:
+        - label: Pairing
+        - label: Reconnecting with a button press
+        - label: One Pro Controller mode
+        - label: Separate Joy-Cons mode
+        - label: Motion controls
+        - label: Rumble
+        - label: Player lights
+        - label: The app
+        - label: The tray icon
+  - type: input
+    id: rate
+    attributes:
+      label: Report rate with both Joy-Cons connected
+      description: From `joy2con status`. Some adapters give each Joy-Con about half the rate when both are connected.
+      placeholder: e.g. 133 Hz each, or about 65 Hz each
+  - type: textarea
+    id: programs
+    attributes:
+      label: Programs you used them in
+      description: Steam, specific games, Proton or Wine titles, emulators
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything that didn't work or needed extra steps
