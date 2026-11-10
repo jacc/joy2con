@@ -1,0 +1,53 @@
+name: Bug report
+description: Something doesn't work with your Joy-Cons
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing the beta. The details below make most problems possible to track down.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: Distribution and desktop
+      placeholder: e.g. Arch Linux, KDE Plasma 6.5
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Kernel and BlueZ versions
+      description: Output of `uname -r` and `bluetoothctl --version`
+    validations:
+      required: true
+  - type: input
+    id: adapter
+    attributes:
+      label: Bluetooth adapter
+      description: Its line from `lsusb`, or the model of the built-in card
+    validations:
+      required: true
+  - type: input
+    id: joycons
+    attributes:
+      label: Joy-Cons and firmware
+      description: Which Joy-Cons, and the firmware shown on each Joy-Con's page in the app
+  - type: textarea
+    id: status
+    attributes:
+      label: joy2con status
+      description: Output of `joy2con status`
+      render: text
+  - type: textarea
+    id: log
+    attributes:
+      label: Driver log
+      description: Output of `journalctl --user -u joy2con -b --no-pager | tail -n 200`
+      render: text

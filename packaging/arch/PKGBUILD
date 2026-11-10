@@ -1,0 +1,28 @@
+# Maintainer: jacc
+pkgname=joy2con
+pkgver=0.1.0b1
+pkgrel=1
+pkgdesc="Switch 2 Joy-Con driver: pairs them over Bluetooth LE and presents them as Switch controllers to games, Steam and Wine"
+arch=(any)
+url="https://github.com/jacc/joy2con"
+license=(GPL-3.0-or-later)
+depends=(python python-bleak python-pycryptodome pyside6 kirigami kirigami-addons qqc2-desktop-style bluez polkit)
+makedepends=(git python-build python-installer python-setuptools python-wheel)
+install=joy2con.install
+source=("git+$url.git#tag=v$pkgver")
+sha256sums=('SKIP')
+
+build() {
+    cd "$pkgname"
+    python -m build --wheel --no-isolation
+}
+
+package() {
+    cd "$pkgname"
+    python -m installer --destdir="$pkgdir" dist/*.whl
+    install -Dm644 data/joy2con.service "$pkgdir/usr/lib/systemd/user/joy2con.service"
+    install -Dm644 data/joy2con.desktop "$pkgdir/usr/share/applications/joy2con.desktop"
+    install -Dm644 data/joy2con-tray.desktop "$pkgdir/usr/share/joy2con/joy2con-tray.desktop"
+    install -Dm644 data/70-joy2con.rules "$pkgdir/usr/lib/udev/rules.d/70-joy2con.rules"
+    install -Dm644 joy2con/data/joy2con.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/joy2con.svg"
+}

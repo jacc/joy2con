@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=joy2con
+GenericName=Joy-Con 2 Manager
+Comment=Pair Switch 2 Joy-Cons and see their buttons, motion and battery
+Exec=joy2con
+Icon=joy2con
+Terminal=false
+Categories=Settings;HardwareSettings;Game;
+Keywords=joycon;switch;nintendo;controller;gamepad;bluetooth;gyro;
+StartupNotify=true

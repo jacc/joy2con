@@ -1,0 +1,26 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install tools
+        run: python -m pip install build pyflakes
+      - name: Lint
+        run: python -m pyflakes joy2con tools
+      - name: Compile
+        run: python -m compileall -q joy2con tools
+      - name: Draw the artwork
+        run: python -c "from joy2con import art; [art.lines_svg(s, None, None) and art.fill_svg(s, None) for s in ('left', 'right')]"
+      - name: Check shell scripts
+        run: bash -n install.sh joy2con/data/setup-bluetooth.sh
+      - name: Build
+        run: python -m build

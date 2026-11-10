@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=joy2con tray
+Exec=joy2con --hidden
+Icon=joy2con
+Terminal=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
+X-KDE-autostart-phase=2

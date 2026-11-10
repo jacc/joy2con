@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "joy2con"
+version = "0.1.0b1"
+description = "Switch 2 Joy-Con driver for Linux: pairs them over Bluetooth LE and presents them to games as Switch controllers"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = ["bleak>=0.22", "pycryptodome>=3.20"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: System :: Hardware :: Hardware Drivers",
+    "Topic :: Games/Entertainment",
+]
+
+# The app also needs KDE's Kirigami, Kirigami Addons and qqc2-desktop-style QML
+# modules, built against the same Qt as PySide6, so it is best installed from
+# the distribution's packages rather than from here.
+[project.optional-dependencies]
+app = ["PySide6>=6.7"]
+
+[project.urls]
+Homepage = "https://github.com/jacc/joy2con"
+Issues = "https://github.com/jacc/joy2con/issues"
+
+[project.scripts]
+joy2con = "joy2con.__main__:main"
+
+[tool.setuptools]
+packages = ["joy2con"]
+
+[tool.setuptools.package-data]
+joy2con = ["qml/*.qml", "data/*"]

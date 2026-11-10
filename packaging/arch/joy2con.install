@@ -1,0 +1,10 @@
+post_install() {
+    echo ">>> joy2con: finish setup as your normal user:"
+    echo ">>>   joy2con setup                         # one-time Bluetooth settings (asks for your password)"
+    echo ">>>   systemctl --user enable --now joy2con # start the driver now and at login"
+    echo ">>>   joy2con                               # open the app"
+}
+
+post_upgrade() {
+    echo ">>> joy2con: restart the driver to use the new version: systemctl --user restart joy2con"
+}

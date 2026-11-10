@@ -1,0 +1,12 @@
+[Unit]
+Description=joy2con: Switch 2 Joy-Con driver
+Documentation=https://github.com/jacc/joy2con
+After=bluetooth.target
+
+[Service]
+ExecStart=/usr/bin/joy2con daemon
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

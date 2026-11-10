@@ -1,0 +1,3 @@
+# joy2con creates virtual controllers through /dev/uhid; let the user at the
+# local seat do that without root.
+KERNEL=="uhid", TAG+="uaccess"
