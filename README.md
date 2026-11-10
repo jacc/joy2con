@@ -12,7 +12,6 @@
   <a href="LICENSE"><img alt="License: GPL-3.0-or-later" src="https://img.shields.io/badge/license-GPL--3.0--or--later-blue"></a>
   <img alt="Linux" src="https://img.shields.io/badge/platform-Linux-informational?logo=linux&logoColor=white">
   <img alt="Python 3.11+" src="https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white">
-  <a href="https://aur.archlinux.org/packages/joy2con"><img alt="AUR" src="https://img.shields.io/aur/version/joy2con?logo=archlinux&logoColor=white&label=AUR"></a>
 </p>
 
 joy2con is a Linux driver for the Nintendo Switch 2 Joy-Cons. It pairs with
@@ -74,8 +73,13 @@ PySide6 6.12, a UGREEN BT 6.0 USB adapter, and Joy-Cons on firmware 2.1.4.
 
 ### Arch Linux and derivatives
 
+An AUR package is on the way. Until then, build the same package from this
+repository:
+
 ```sh
-yay -S joy2con     # or paru, or build packaging/arch/PKGBUILD with makepkg
+git clone https://github.com/jacc/joy2con.git
+cd joy2con/packaging/arch
+makepkg -si
 ```
 
 ### Other distributions
