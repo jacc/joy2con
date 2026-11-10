@@ -121,7 +121,7 @@ your other Bluetooth devices. It sets:
   uses to notice a Joy-Con waking up.
 
 To keep the tray icon at login, copy `joy2con-tray.desktop` (in
-`/usr/share/joy2con/` for the AUR package, `data/` in the source) to
+`/usr/share/joy2con/` for the Arch package, `data/` in the source) to
 `~/.config/autostart/`.
 
 ## Usage
