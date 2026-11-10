@@ -1,4 +1,4 @@
-# Maintainer: jacc
+# Maintainer: Jack LaFond <jack at lafond dot id>
 pkgname=joy2con
 pkgver=0.1.0b1
 pkgrel=1
